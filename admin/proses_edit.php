@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../koneksi.php';
 date_default_timezone_set('Asia/Jakarta');
 
@@ -11,11 +11,11 @@ $id_size = $_POST["id_size"];
 $id_status = $_POST["id_status"];
 
 // Upload Proses
-if($_FILES["fileToUpload"]["size"]!=0){   // Jika browse image di tekan maka $_FILES akan terisi
+if ($_FILES["fileToUpload"]["size"] != 0) { // Jika browse image di tekan maka $_FILES akan terisi
     $target_dir = "../assets/images/"; // path directory image akan di simpan
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]); // full path dari image yg akan di simpan
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) { // fungsi ini utk memindahkan file dr tempat asal ke target_file
-        echo "The file ". htmlspecialchars(basename($_FILES["fileToUpload"]["name"])). " has been uploaded.<br>";
+        echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.<br>";
     } else {
         echo "Sorry, there was an error uploading your file.<br>";
     }

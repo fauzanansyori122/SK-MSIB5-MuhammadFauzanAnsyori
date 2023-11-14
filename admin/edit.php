@@ -38,8 +38,8 @@
             enctype="multipart/form-data">
             <table class="table">
                 <tr>
-            <td colspan="3"><img src="<?php echo $image ?>" width="50"></td>
-        </tr>
+                    <td colspan="3"><img src="<?php echo $image ?>" width="50"></td>
+                </tr>
                 <tr>
                     <div class="input-group  text-center">
                         <td>
@@ -90,66 +90,79 @@
                     </div>
                 </tr>
                 <tr>
-                <div class="input-group mb-3 col-md-4"><td>
-                    <label class="input-group-text" for="inputGroupSelect01">Brand</label></td><td>
-                    <div class="col-md-12">
-                        <select class="form-select" id="id_brand" required name="id_brand" required>
-                            <option selected>
-                                <?php
-                                $query = mysqli_query($conn, "SELECT * FROM brand_produk");
-                                if (mysqli_num_rows($query) > 0) {
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        echo "<option value='" . $data["id_brand"] . "'>" . $data["brand"] . "</option>";
-                                    }
-                                } else {
-                                    echo "<option value=''>No items available</option>";
-                                }
-                                ?>
-                            </option>
-                        </select>
-                    </div></td>
-                </div>
-                            </tr>
+                    <div class="input-group mb-3 col-md-4">
+                        <td>
+                            <label class="input-group-text" for="inputGroupSelect01">Brand</label>
+                        </td>
+                        <td>
+                            <div class="col-md-12">
+                                <select class="form-select" id="id_brand" required name="id_brand" required>
+                                    <option selected>
+                                        <?php
+                                        $query = mysqli_query($conn, "SELECT * FROM brand_produk");
+                                        if (mysqli_num_rows($query) > 0) {
+                                            while ($data = mysqli_fetch_array($query)) {
+                                                echo "<option value='" . $data["id_brand"] . "'>" . $data["brand"] . "</option>";
+                                            }
+                                        } else {
+                                            echo "<option value=''>No items available</option>";
+                                        }
+                                        ?>
+                                    </option>
+                                </select>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
                 <tr>
-                <div class="input-group mb-3 col-md-4"><td>
-                    <label class="input-group-text" for="inputGroupSelect01">Size</label></td><td>
-                    <div class="col-md-12">
-                        <select class="form-select" id="id_size" required name="id_size" required>
-                            <option selected>
-                                <?php
-                                $query = mysqli_query($conn, "SELECT * FROM size_produk");
-                                if (mysqli_num_rows($query) > 0) {
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        echo "<option value='" . $data["id_size"] . "'>" . $data["size"] . "</option>";
-                                    }
-                                } else {
-                                    echo "<option value=''>No items available</option>";
-                                }
-                                ?>
-                            </option>
-                        </select>
-                    </div></td>
-                </div>
-                            </tr><tr>
-                <div class="input-group mb-3 col-md-4"><td>
-                    <label class="input-group-text" for="inputGroupSelect01">Status</label></td><td>
-                    <div class="col-md-12">
-                        <select class="form-select" id="id_status" required name="id_status" required>
-                            <option selected>
-                                <?php
-                                $query = mysqli_query($conn, "SELECT * FROM status_produk");
-                                if (mysqli_num_rows($query) > 0) {
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        echo "<option value='" . $data["id_status"] . "'>" . $data["status_produk"] . "</option>";
-                                    }
-                                } else {
-                                    echo "<option value=''>No items available</option>";
-                                }
-                                ?>
-                            </option>
-                        </select>
-                    </div></td>
-                </div>
+                    <div class="input-group mb-3 col-md-4">
+                        <td>
+                            <label class="input-group-text" for="inputGroupSelect01">Size</label>
+                        </td>
+                        <td>
+                            <div class="col-md-12">
+                                <select class="form-select" id="id_size" required name="id_size" required>
+                                    <option selected>
+                                        <?php
+                                        $query = mysqli_query($conn, "SELECT * FROM size_produk");
+                                        if (mysqli_num_rows($query) > 0) {
+                                            while ($data = mysqli_fetch_array($query)) {
+                                                echo "<option value='" . $data["id_size"] . "'>" . $data["size"] . "</option>";
+                                            }
+                                        } else {
+                                            echo "<option value=''>No items available</option>";
+                                        }
+                                        ?>
+                                    </option>
+                                </select>
+                            </div>
+                        </td>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="input-group mb-3 col-md-4">
+                        <td>
+                            <label class="input-group-text" for="inputGroupSelect01">Status</label>
+                        </td>
+                        <td>
+                            <div class="col-md-12">
+                                <select class="form-select" id="id_status" required name="id_status" required>
+                                    <option selected>
+                                        <?php
+                                        $query = mysqli_query($conn, "SELECT * FROM status_produk");
+                                        if (mysqli_num_rows($query) > 0) {
+                                            while ($data = mysqli_fetch_array($query)) {
+                                                echo "<option value='" . $data["id_status"] . "'>" . $data["status_produk"] . "</option>";
+                                            }
+                                        } else {
+                                            echo "<option value=''>No items available</option>";
+                                        }
+                                        ?>
+                                    </option>
+                                </select>
+                            </div>
+                        </td>
+                    </div>
                 </tr>
             </table>
             <input type="submit" name="Submit" value="Simpan">

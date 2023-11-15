@@ -12,7 +12,7 @@
   <title>Pixie Template - Contact</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
   <!-- Additional CSS Files -->
@@ -26,20 +26,20 @@ https://www.tooplate.com/view/2114-pixie
 -->
 </head>
 
-<body>
-
-  <!-- Pre Header -->
+<body style="margin: 0;">
   <div id="pre-header">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <span>Suspendisse laoreet magna vel diam lobortis imperdiet</span>
+          <span>Selamat datang di store kami</span>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Navigation -->
+  <?php
+  include '../koneksi.php';
+  $query = mysqli_query($conn, "SELECT * from produk;");
+  ?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" alt=""></a>
@@ -49,20 +49,16 @@ https://www.tooplate.com/view/2114-pixie
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="products.php">Products
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.php">About Us</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact Us</a>
-            <span class="sr-only">(current)</span>
           </li>
         </ul>
       </div>
@@ -88,9 +84,8 @@ https://www.tooplate.com/view/2114-pixie
                            3. Click "Share" and choose "Embed map" tab
                            4. Copy only URL and paste it within the src="" field below
                     -->
-
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63331.36364692361!2d108.13939124878416!3d-7.216844441905834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f4e37aff5c5c1%3A0x4d95cae86f45a322!2sRajapolah%2C%20Tasikmalaya%20Regency%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700038910810!5m2!1sen!2sid"
               width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
@@ -152,13 +147,14 @@ https://www.tooplate.com/view/2114-pixie
         <div class="col-md-12">
           <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>Subscribe on PIXIE now!</h1>
+            <h1>Subscribe on Vendora-Store now!</h1>
           </div>
         </div>
         <div class="col-md-8 offset-md-2">
           <div class="main-content">
-            <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it
-              celiac readymade vice.</p>
+            <p>If you have questions about our products and want to enjoy certain discounts, you can
+              follow us on social
+              media or send your email now</p>
             <div class="container">
               <form id="subscribe" action="" method="get">
                 <div class="row">
@@ -172,7 +168,8 @@ https://www.tooplate.com/view/2114-pixie
                   </div>
                   <div class="col-md-5">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
+                      <button type="submit" id="form-submit" class="button">Subscribe
+                        Now!</button>
                     </fieldset>
                   </div>
                 </div>
@@ -229,9 +226,7 @@ https://www.tooplate.com/view/2114-pixie
       <div class="row">
         <div class="col-md-12">
           <div class="copyright-text">
-            <p>Copyright &copy; 2019 Company Name
-
-              - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+            <p>Vendora &copy; Your Website 2023
           </div>
         </div>
       </div>

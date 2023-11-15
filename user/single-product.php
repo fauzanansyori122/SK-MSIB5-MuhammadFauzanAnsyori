@@ -36,10 +36,22 @@ https://www.tooplate.com/view/2114-pixie
       </div>
     </div>
   </div>
-  <?php
-  include '../koneksi.php';
-  $query = mysqli_query($conn, "SELECT * from produk as p join size_produk as zp on p.id_size = zp.id_size join status_produk as sp on p.id_status = sp.id_status ORDER BY p.id ASC;");
-  ?>
+
+    <?php
+    include '../koneksi.php';
+
+    $produk = mysqli_query($conn, "SELECT * from produk where id='$_GET[id]'");
+
+    while ($p = mysqli_fetch_array($produk)) {
+        $id = $p["id"];
+        $nama_produk = $p["nama_produk"];
+        $image = $p["image"];
+        $harga = $p["harga"];
+        $id_ukuran = $p["id_size"];
+        $id_status = $p["id_status"];
+    }
+
+    ?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" alt=""></a>
@@ -53,26 +65,6 @@ https://www.tooplate.com/view/2114-pixie
             <a class="nav-link" href="index.php">Home
               <span class="sr-only">(current)</span>
             </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              product
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Vans.php">Vans</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="Adidas.php">Adidas</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="Nike.php">Nike</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="Puma.php">Puma</a></li>
-            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.php">About Us</a>
@@ -90,73 +82,54 @@ https://www.tooplate.com/view/2114-pixie
   <div class="single-product">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <div class="line-dec"></div>
-            <h1>Single Product</h1>
+        <div class="col-lg-8">
+          <div class="left-images">
+            <img src="<?php echo $image ?>" alt="">
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="product-slider">
-            <div id="slider" class="flexslider">
-              <ul class="slides">
-                <li>
-                  <img src="../assets/images/big-01.jpg" />
-                </li>
-                <li>
-                  <img src="../assets/images/big-02.jpg" />
-                </li>
-                <li>
-                  <img src="../assets/images/big-03.jpg" />
-                </li>
-                <li>
-                  <img src="../assets/images/big-04.jpg" />
-                </li>
-                <!-- items mirrored twice, total of 12 -->
-              </ul>
-            </div>
-            <div id="carousel" class="flexslider">
-              <ul class="slides">
-                <li>
-                  <img src="../assets/images/thumb-01.jpg" />
-                </li>
-                <li>
-                  <img src="../assets/images/thumb-02.jpg" />
-                </li>
-                <li>
-                  <img src="../assets/images/thumb-03.jpg" />
-                </li>
-                <li>
-                  <img src="../assets/images/thumb-04.jpg" />
-                </li>
-                <!-- items mirrored twice, total of 12 -->
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
+        <div class="col-lg-4">
           <div class="right-content">
-            <h4>Single Product Name</h4>
-            <h6>$55.00</h6>
-            <p>Proin commodo, diam a ultricies sagittis, erat odio rhoncus metus, eu feugiat lorem lacus aliquet arcu.
-              Curabitur in gravida nisi, non placerat nibh. Praesent sit amet diam ultrices, commodo turpis id,
-              dignissim leo. Suspendisse mauris massa, porttitor non fermentum vel, ullamcorper scelerisque velit. </p>
-            <span>7 left on stock</span>
-            <form action="" method="get">
-              <label for="quantity">Quantity:</label>
-              <input name="quantity" type="quantity" class="quantity-text" id="quantity"
-                onfocus="if(this.value == '1') { this.value = ''; }" onBlur="if(this.value == '') { this.value = '1';}"
-                value="1">
-              <input type="submit" class="button" value="Order Now!">
-            </form>
-            <div class="down-content">
-              <div class="categories">
-                <h6>Category: <span><a href="#">Pants</a>,<a href="#">Women</a>,<a href="#">Lifestyle</a></span></h6>
+            <h4>
+              <?php echo $nama_produk ?>
+            </h4>
+            <span>
+              <?php echo rupiah($harga); ?>
+            </span>
+            <ul class="stars">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span>The shirt with white stripes plus black shades on the side adds a minimalist impression</span>
+            <div class="quote">
+              <i class="fa fa-quote-left"></i>
+              <p>Order now, don't miss out because there's a 30% discount this month.</p>
+            </div>
+            <div class="quantity-content">
+              <div class="left-content">
+                <h6>No. of Orders</h6>
               </div>
-              <div class="share">
-                <h6>Share: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
-                        class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
+              <div class="right-content">
+                <div class="quantity buttons_added">
+                  <input type="button" value="-" class="minus">
+                  <input id="quantity" type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty"
+                    class="input-text qty text" size="4" pattern="" inputmode="">
+                  <input type="button" value="+" class="plus">
+                </div>
               </div>
+            </div>
+
+            <div class="total">
+              <h4>Total:
+                <input type="hidden" id="hargaSatuan" value="<?php echo $harga; ?>">
+                <span id="rupiah">
+                  <?php echo rupiah($harga) ?>
+                </span>
+              </h4>
+              <br><br>
+              <div class="main-border-button"><a href="#">Add To Cart</a></div>
             </div>
           </div>
         </div>
@@ -256,13 +229,14 @@ https://www.tooplate.com/view/2114-pixie
         <div class="col-md-12">
           <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>Subscribe on PIXIE now!</h1>
+            <h1>Subscribe on Vendora-Store now!</h1>
           </div>
         </div>
         <div class="col-md-8 offset-md-2">
           <div class="main-content">
-            <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it
-              celiac readymade vice.</p>
+            <p>If you have questions about our products and want to enjoy certain discounts, you can
+              follow us on social
+              media or send your email now</p>
             <div class="container">
               <form id="subscribe" action="" method="get">
                 <div class="row">
@@ -276,7 +250,8 @@ https://www.tooplate.com/view/2114-pixie
                   </div>
                   <div class="col-md-5">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
+                      <button type="submit" id="form-submit" class="button">Subscribe
+                        Now!</button>
                     </fieldset>
                   </div>
                 </div>
@@ -333,9 +308,7 @@ https://www.tooplate.com/view/2114-pixie
       <div class="row">
         <div class="col-md-12">
           <div class="copyright-text">
-            <p>Copyright &copy; 2019 Company Name
-
-              - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+            <p>Vendora &copy; Your Website 2023
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@
   <title>Pixie Template - About Page</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
   <!-- Additional CSS Files -->
@@ -26,20 +26,20 @@ https://www.tooplate.com/view/2114-pixie
 -->
 </head>
 
-<body>
-
-  <!-- Pre Header -->
+<body style="margin: 0;">
   <div id="pre-header">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <span>Suspendisse laoreet magna vel diam lobortis imperdiet</span>
+          <span>Selamat datang di store kami</span>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Navigation -->
+  <?php
+  include '../koneksi.php';
+  $query = mysqli_query($conn, "SELECT * from produk;");
+  ?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" alt=""></a>
@@ -49,17 +49,13 @@ https://www.tooplate.com/view/2114-pixie
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="products.php">Products
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="about.php">About Us</a>
-            <span class="sr-only">(current)</span>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact Us</a>
@@ -87,7 +83,7 @@ https://www.tooplate.com/view/2114-pixie
         </div>
         <div class="col-md-6">
           <div class="right-content">
-            <h4>Phasellus vel interdum elit</h4>
+            <h4>Muhammad Fauzan Ansyori</h4>
             <p><a href="https://www.pexels.com/photo/group-of-people-raising-right-hand-1059120/">Photo Credit</a> goes
               to Pexels website. Aliquam erat volutpat. Pellentesque fringilla, ligula consectetur cursus scelerisque,
               leo elit pellentesque sapien, et pharetra arcu elit vitae sem. Suspendisse erat dui, condimentum in mi ac,
@@ -123,13 +119,14 @@ https://www.tooplate.com/view/2114-pixie
         <div class="col-md-12">
           <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>Subscribe on PIXIE now!</h1>
+            <h1>Subscribe on Vendora-Store now!</h1>
           </div>
         </div>
         <div class="col-md-8 offset-md-2">
           <div class="main-content">
-            <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it
-              celiac readymade vice.</p>
+            <p>If you have questions about our products and want to enjoy certain discounts, you can
+              follow us on social
+              media or send your email now</p>
             <div class="container">
               <form id="subscribe" action="" method="get">
                 <div class="row">
@@ -143,7 +140,8 @@ https://www.tooplate.com/view/2114-pixie
                   </div>
                   <div class="col-md-5">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
+                      <button type="submit" id="form-submit" class="button">Subscribe
+                        Now!</button>
                     </fieldset>
                   </div>
                 </div>
@@ -200,9 +198,7 @@ https://www.tooplate.com/view/2114-pixie
       <div class="row">
         <div class="col-md-12">
           <div class="copyright-text">
-            <p>Copyright &copy; 2019 Company Name
-
-              - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+            <p>Vendora &copy; Your Website 2023
           </div>
         </div>
       </div>

@@ -115,7 +115,7 @@
 
                   ?>
                   <div class="col-lg-4">
-                    <a href="single-product.php">
+                    <a href="single-product.php?id=<?php echo $data["id"] ?>">
                       <div class="item">
                         <div class="thumb">
                           <img src="<?php echo $data["image"] ?>" alt="">

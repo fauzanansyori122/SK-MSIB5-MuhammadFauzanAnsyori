@@ -37,22 +37,22 @@ https://www.tooplate.com/view/2114-pixie
     </div>
   </div>
 
-    <?php
-    include '../koneksi.php';
+  <?php
+  include '../koneksi.php';
 
-    $produk = mysqli_query($conn, "SELECT * from produk where id='$_GET[id]'");
+  $produk = mysqli_query($conn, "SELECT * from produk where id='$_GET[id]'");
 
-    while ($p = mysqli_fetch_array($produk)) {
-        $id = $p["id"];
-        $nama_produk = $p["nama_produk"];
-        $image = $p["image"];
-        $harga = $p["harga"];
-        $id_gender = $p["id_brand"];
-        $id_ukuran = $p["id_size"];
-        $id_status = $p["id_status"];
-    }
+  while ($p = mysqli_fetch_array($produk)) {
+    $id = $p["id"];
+    $nama_produk = $p["nama_produk"];
+    $image = $p["image"];
+    $harga = $p["harga"];
+    $id_gender = $p["id_brand"];
+    $id_ukuran = $p["id_size"];
+    $id_status = $p["id_status"];
+  }
 
-    ?>
+  ?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" alt=""></a>
@@ -80,25 +80,29 @@ https://www.tooplate.com/view/2114-pixie
 
   <!-- Page Content -->
   <!-- Single Starts Here -->
-  <div class="single-product">
+  <div class="single-product" style="height : 600px">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8">
-          <div class="left-images">
-            <img src="<?php echo $image ?>" alt="">
+        <div class="col-md-6">
+          <div class="product-slider" style=" margin-top: 100px";>
+            <div id="slider" class="flexslider">
+              <ul class="slides">
+                <li><img src="<?php echo $image ?>" alt=""></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="right-content">
-            <h4>
+        <div class="col-md-6">
+            <div class="right-content" style=" margin-top: 130px";>
+            <h2>
               <?php echo $nama_produk ?>
-            </h4>
-            <span>
+            </h2>
+            <h6>
               <?php echo rupiah($harga); ?>
-            </span>
-            <span>Casual shoes that give a luxurious impression and are guaranteed to be original</span>
+            </h6>
+            <p>Casual shoes that give a luxurious impression and are guaranteed to be original</p>
             <div class="quote">
-              <p>Order sekarang, nikmati discount 20% di awal bulan.</p>
+              <span>Order sekarang, nikmati discount 20% di awal bulan.</span>
             </div>
             <div class="quantity-content">
               <div class="left-content">
@@ -122,7 +126,7 @@ https://www.tooplate.com/view/2114-pixie
                 </span>
               </h4>
               <br><br>
-              <div class="main-border-button"><a href="#">Masukan keranjang</a></div>
+              <input type="submit" class="button" value="Order Now!">
             </div>
           </div>
         </div>
@@ -130,89 +134,6 @@ https://www.tooplate.com/view/2114-pixie
     </div>
   </div>
   <!-- Single Page Ends Here -->
-
-
-  <!-- Similar Starts Here -->
-  <div class="featured-items">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <div class="line-dec"></div>
-            <h1>You May Also Like</h1>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="owl-carousel owl-theme">
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-01.jpg" alt="Item 1">
-                <h4>Proin vel ligula</h4>
-                <h6>$15.00</h6>
-              </div>
-            </a>
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-02.jpg" alt="Item 2">
-                <h4>Erat odio rhoncus</h4>
-                <h6>$25.00</h6>
-              </div>
-            </a>
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-03.jpg" alt="Item 3">
-                <h4>Integer vel turpis</h4>
-                <h6>$35.00</h6>
-              </div>
-            </a>
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-04.jpg" alt="Item 4">
-                <h4>Sed purus quam</h4>
-                <h6>$45.00</h6>
-              </div>
-            </a>
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-05.jpg" alt="Item 5">
-                <h4>Morbi aliquet</h4>
-                <h6>$55.00</h6>
-              </div>
-            </a>
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-06.jpg" alt="Item 6">
-                <h4>Urna ac diam</h4>
-                <h6>$65.00</h6>
-              </div>
-            </a>
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-04.jpg" alt="Item 7">
-                <h4>Proin eget imperdiet</h4>
-                <h6>$75.00</h6>
-              </div>
-            </a>
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-05.jpg" alt="Item 8">
-                <h4>Nullam risus nisl</h4>
-                <h6>$85.00</h6>
-              </div>
-            </a>
-            <a href="single-product.html">
-              <div class="featured-item">
-                <img src="../assets/images/item-06.jpg" alt="Item 9">
-                <h4>Cras tempus</h4>
-                <h6>$95.00</h6>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Similar Ends Here -->
 
 
   <!-- Subscribe Form Starts Here -->
@@ -320,6 +241,7 @@ https://www.tooplate.com/view/2114-pixie
   <script src="../assets/js/owl.js"></script>
   <script src="../assets/js/isotope.js"></script>
   <script src="../assets/js/flex-slider.js"></script>
+  <script src="../assets/js/quantity.js"></script>
 
 
   <script language="text/Javascript">
@@ -331,6 +253,47 @@ https://www.tooplate.com/view/2114-pixie
         t.style.color = '#fff';
       }
     }
+
+    $(document).ready(function () { // ketika dokumen ready maka eksekusi kode dibawah
+      $("#quantity").change(function () {   // Jika Ada Perubahan Value dr Id Quantity 
+        var qty = $("#quantity").val();   // menampung variable yg berganti dr id quantity
+        var harga = $("#hargaSatuan").val();  // menampung variable dr input element yg id nya hargaSatuan
+        document.getElementById('rupiah').innerHTML = rupiahJS(qty * harga);
+      });
+    });
+
+    const rupiahJS = (number) => {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR"
+      }).format(number);
+    }
+
+    $(function () {
+      var selectedClass = "";
+      $("p").click(function () {
+        selectedClass = $(this).attr("data-rel");
+        $("#portfolio").fadeTo(50, 0.1);
+        $("#portfolio div").not("." + selectedClass).fadeOut();
+        setTimeout(function () {
+          $("." + selectedClass).fadeIn();
+          $("#portfolio").fadeTo(50, 1);
+        }, 500);
+
+      });
+    });
+
+    <?php
+    function rupiah($angka)
+    {
+
+      $hasil_rupiah = "Rp " . number_format($angka, 2, ',', '.');
+      return $hasil_rupiah;
+
+    }
+
+    ?>
+
   </script>
 
 

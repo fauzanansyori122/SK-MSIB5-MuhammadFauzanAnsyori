@@ -96,21 +96,21 @@
 
                                     ?>
                                     <div class="col-lg-4">
-                                        <a href="single-product.php">
-                                            <div class="item">
-                                                <div class="thumb">
-                                                    <img src="<?php echo $data["image"] ?>" alt="">
+                                            <a href="single-product.php?id=<?php echo $data["id"] ?>">
+                                                <div class="item">
+                                                    <div class="thumb">
+                                                        <img src="<?php echo $data["image"] ?>" alt="">
+                                                    </div>
+                                                    <div class="down-content">
+                                                        <h4>
+                                                            <?php echo $data["nama_produk"] ?>
+                                                        </h4>
+                                                        <span>
+                                                            <?php echo rupiah($data["harga"]); ?>
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                                <div class="down-content">
-                                                    <h4>
-                                                        <?php echo $data["nama_produk"] ?>
-                                                    </h4>
-                                                    <span>
-                                                        <?php echo rupiah($data["harga"]); ?>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </a>
+                                            </a>
                                     </div>
                                     <?php
                                 }

@@ -47,6 +47,7 @@ https://www.tooplate.com/view/2114-pixie
         $nama_produk = $p["nama_produk"];
         $image = $p["image"];
         $harga = $p["harga"];
+        $id_gender = $p["id_brand"];
         $id_ukuran = $p["id_size"];
         $id_status = $p["id_status"];
     }
@@ -95,21 +96,13 @@ https://www.tooplate.com/view/2114-pixie
             <span>
               <?php echo rupiah($harga); ?>
             </span>
-            <ul class="stars">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-            </ul>
-            <span>The shirt with white stripes plus black shades on the side adds a minimalist impression</span>
+            <span>Casual shoes that give a luxurious impression and are guaranteed to be original</span>
             <div class="quote">
-              <i class="fa fa-quote-left"></i>
-              <p>Order now, don't miss out because there's a 30% discount this month.</p>
+              <p>Order sekarang, nikmati discount 20% di awal bulan.</p>
             </div>
             <div class="quantity-content">
               <div class="left-content">
-                <h6>No. of Orders</h6>
+                <h6>Jumlah</h6>
               </div>
               <div class="right-content">
                 <div class="quantity buttons_added">
@@ -129,7 +122,7 @@ https://www.tooplate.com/view/2114-pixie
                 </span>
               </h4>
               <br><br>
-              <div class="main-border-button"><a href="#">Add To Cart</a></div>
+              <div class="main-border-button"><a href="#">Masukan keranjang</a></div>
             </div>
           </div>
         </div>

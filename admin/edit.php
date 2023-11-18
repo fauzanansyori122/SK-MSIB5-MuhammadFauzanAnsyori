@@ -28,17 +28,13 @@
 
     ?>
 
-    <div class="container ">
-        <h2 class="position-absolute top-0 start-50 translate-middle-x"><br>Edit Data</h2>
-    </div>
-
     <div class="container position-absolute top-50 start-50 translate-middle" style="width: 40rem;">
         <div id="error"></div>
         <form class="text-center" action="proses_edit.php?id=<?php echo $id ?>" method="post"
             enctype="multipart/form-data">
             <table class="table">
                 <tr>
-                    <td colspan="3"><img src="<?php echo $image ?>" width="50"></td>
+                    <td colspan="3"><img src="<?php echo $image ?>" width="200px"></td>
                 </tr>
                 <tr>
                     <div class="input-group  text-center">
@@ -73,7 +69,7 @@
                         <td>
                             <div class="col-md-12"> <input type="file" class="form-control"
                                     aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                                    id="fileToUpload" required name="fileToUpload"></div>
+                                    id="fileToUpload" required name="fileToUpload" value="<?php echo $nama_produk ?>"></div>
                         </td>
                     </div>
                 </tr>

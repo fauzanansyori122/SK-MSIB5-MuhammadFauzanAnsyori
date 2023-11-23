@@ -19,9 +19,10 @@ if ($_FILES["fileToUpload"]["size"] != 0) { // Jika browse image di tekan maka $
     } else {
         echo "Sorry, there was an error uploading your file.<br>";
     }
+    $result = mysqli_query($conn, "UPDATE `produk` set `id` = '$id', `nama_produk` = '$nama_produk', `harga` = '$harga', `id_brand` = '$id_brand', `id_size` = '$id_size', `id_status` = '$id_status', `image`= '$target_file' where `id` = '$_GET[id]'");
 }
 
-$result = mysqli_query($conn, "UPDATE `produk` set `id` = '$id', `nama_produk` = '$nama_produk', `harga` = '$harga', `id_brand` = '$id_brand', `id_size` = '$id_size', `id_status` = '$id_status', `image`= '$target_file' where `id` = '$_GET[id]'");
+$result = mysqli_query($conn, "UPDATE `produk` set `id` = '$id', `nama_produk` = '$nama_produk', `harga` = '$harga', `id_brand` = '$id_brand', `id_size` = '$id_size', `id_status` = '$id_status' where `id` = '$_GET[id]'");
 
 header("Location:index.php");
 
